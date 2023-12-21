@@ -1,34 +1,52 @@
 body,
-header .column {
+header .column,
+.piano-keys,
+.container header {
     display: flex;
-    align-items: center;
 }
+
 body {
     justify-content: center;
+    align-items: center;
     min-height: 100vh;
-    background-color: #e3f2fd;
+    background-color: #e3fdf0;
 }
+
+/* Estilizacao container - inicio */
 
 .container {
     width: 780px;
+    align-items: center;
+    background-color: #000;
     border: 1px solid #000;
     border-radius: 20px;
     padding: 35px 40px;
 }
 
+.container header{
+    color:#b2b2b2;
+    justify-content: space-between;
+}
+
+/* Tamanho Titilo do piano - "Virtual Piano" */
 header h2 {
     font-size: 1.6rem;
 }
 
-.column span{
+/* span - volume e teclas */
+.column span {
     font-weight: 500;
     margin-right: 15px;
     font-size: 1.19rem;
 }
-.volume-slider input{
+
+/* Estilizacao range do volume */
+.volume-slider input {
     accent-color: #fff;
 }
-.keys-check input{
+
+/* Estilizacao checkbox - inicio*/
+.keys-check input {
     content: "";
     width: 60px;
     height: 30px;
@@ -38,8 +56,8 @@ header h2 {
     cursor: pointer;
     position: relative;
 }
-
-.keys-check input::before{
+/* Utilizacao do Pseudoelemento before para criar elemento que ficara dentro do checkbox*/
+.keys-check input::before {
     content: "";
     width: 20px;
     height: 20px;
@@ -48,7 +66,59 @@ header h2 {
     background-color: #8c8c8c;
     border-radius: inherit;
     position: absolute;
+    transform: translateY(-50%); 
+    transition: all 0.3s ease; /* suavidade no movimento*/
 }
 
+/* Config para quando o checkbox estiver marcada ficara na posicao a esquerda: */
+.keys-check 
+input:checked::before {
+    left: 2.1rem;
+    background-color: #ffffff;
+}
 
+/* Estilizacao checkbox - fim*/
+
+/* Estilizacao das teclas do piano - inicio */
+
+.piano-keys{
+    margin-top: 40px;
+}
+
+.piano-keys .key{
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    color:#b2b2b2;
+    text-transform: uppercase;
+}
+
+/* Estilizacao das teclas brancas */
+.piano-keys .white{
+    width: 70px;
+    height: 230px;
+    border-radius: 8px;
+    background: linear-gradient(#fff 96%, #eee 4%);
+}
+
+/* Estilizacao das teclas pretas */
+.piano-keys .black{
+    width: 44px;
+    height: 140px;
+    z-index: 2; /* para tecla preta ficar em cima da branca*/
+    margin: 0 22px 0 -22px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(#333, #000);
+}
+
+/* Ver por que os elementos nao estao ficando na possicao certa: */
+.piano-keys span{
+    position: absolute;
+    bottom: 20px;
+    font-size: 1.13rem;
+}
+
+/* Estilizacao das teclas do piano - fim */
+
+/* Estilizacao container - fim */
 
