@@ -16,7 +16,6 @@ body {
 
 .container {
     width: 780px;
-    align-items: center;
     background-color: #000;
     border: 1px solid #000;
     border-radius: 20px;
@@ -34,7 +33,7 @@ header h2 {
 }
 
 /* span - volume e teclas */
-.column span {
+header .column span {
     font-weight: 500;
     margin-right: 15px;
     font-size: 1.19rem;
@@ -47,7 +46,6 @@ header h2 {
 
 /* Estilizacao checkbox - inicio*/
 .keys-check input {
-    content: "";
     width: 60px;
     height: 30px;
     appearance: none;
@@ -90,6 +88,7 @@ input:checked::before {
     list-style: none;
     user-select: none;
     color:#b2b2b2;
+    position: relative; /*Importante*/
     text-transform: uppercase;
 }
 
@@ -115,8 +114,9 @@ input:checked::before {
 
 /* Ver por que os elementos nao estao ficando na possicao certa: */
 .piano-keys span{
-    position: absolute;
+    position: absolute; /*Importante*/
     bottom: 20px;
+    text-align: center;
     font-size: 1.13rem;
 }
 
