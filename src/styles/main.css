@@ -29,12 +29,25 @@ header h2 {
     accent-color: #fff;
 }
 .keys-check input{
+    content: "";
     width: 60px;
     height: 30px;
     appearance: none;
     border-radius: 30px;
     background-color: #4b4b4b;
     cursor: pointer;
+    position: relative;
+}
+
+.keys-check input::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 0.3rem;
+    background-color: #8c8c8c;
+    border-radius: inherit;
+    position: absolute;
 }
 
 
