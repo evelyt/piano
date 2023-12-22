@@ -81,6 +81,7 @@ input:checked::before {
 
 .piano-keys{
     margin-top: 40px;
+    justify-content: center;
 }
 
 .piano-keys .key{
@@ -106,8 +107,7 @@ input:checked::before {
     width: 44px;
     height: 140px;
     z-index: 2; /* para tecla preta ficar em cima da branca*/
-    margin: 0 22px 0 -22px;
-    border: 1px solid #fff;
+    margin: 0 -22px 0 -22px;
     border-radius: 0 0 5px 5px;
     background: linear-gradient(#333, #000);
 }
@@ -116,8 +116,19 @@ input:checked::before {
 .piano-keys span{
     position: absolute; /*Importante*/
     bottom: 20px;
+    width: 100%;
     text-align: center;
     font-size: 1.13rem;
+}
+
+/* Eeito do clique */
+.piano-keys .white:active{
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+.piano-keys .black:active{
+    box-shadow: inset -5px 5px 10px rgba(255,255,255 0.1);
+    background: linear-gradient(to bottom, #000, #434343);
 }
 
 /* Estilizacao das teclas do piano - fim */
