@@ -3,11 +3,11 @@ const volumeSlider = document.querySelector(".volume-slider input");
 const keysCheck = document.querySelector(".keys-check")
 
 let mapedKeys = [];
-let audio = new Audio("src/tunes/a.wav");
+let audio = new Audio("src/musics/beats/a.mp3");
 
 // Som das teclas
 const playTune = (key) => {
-    audio.src = `src/tunes/${key}.wav`
+    audio.src = `src/musics/beats/${key}.mp3`
     audio.play();
 
     const clikedKey = document.querySelector(`[data-key="${key}"]`);
